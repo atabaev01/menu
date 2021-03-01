@@ -1,13 +1,14 @@
 import React from 'react';
 
-const MenuItem = () => {
+const MenuItem = ({item,deleteItem}) => {
+    const {name,price,count,id} = item
     return (
         <div className='row mb-2'>
-            <div className='col-4'>Manty</div>
-            <div className='col-2'>120</div>
-            <div className='col-2'>5 </div>
-            <div className='col-2'>600 som</div>
-            <div className='col-2'>www</div>
+            <div className='col-4'>{name}</div>
+            <div className='col-2'>{price}</div>
+            <div className='col-2'>{count} </div>
+            <div className='col-2'>{price*count}</div>
+            <div className='col-2'><button onClick={deleteItem(id)} className='btn btn-danger'></button></div>
         </div>
     );
 };
